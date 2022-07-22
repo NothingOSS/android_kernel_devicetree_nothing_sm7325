@@ -1384,6 +1384,12 @@
 		gpio_id1 = <&tlmm 19 0x00>;
 		gpio_id2 = <&tlmm 21 0x00>;
 	};
+
+	slot_state {
+		compatible = "nt,slot_check";
+		gpio112 = <&tlmm 112 0x00>;
+		gpio116 = <&tlmm 116 0x00>;
+	};
 };
 
 &icnss2 {
