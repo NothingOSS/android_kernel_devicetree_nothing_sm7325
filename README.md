@@ -11,3 +11,7 @@
 - Improve audio, led and display driver
 - Bugs fix
 
+3. OS 1.1.0
+- Improve touch panel, led driver
+- Bugs fix
+
