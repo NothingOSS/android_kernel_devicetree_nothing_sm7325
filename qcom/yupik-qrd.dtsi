@@ -649,31 +649,31 @@
 
 		trips {
 			quiet_batt_trip0: quiet-batt-trip0 {
-				temperature = <40000>;
-				hysteresis = <7000>;
+				temperature = <38000>;
+				hysteresis = <5000>;
 				type = "passive";
 			};
 
 			quiet_batt_trip1: quiet-batt-trip1 {
-				temperature = <45000>;
-				hysteresis = <7000>;
+				temperature = <40000>;
+				hysteresis = <4000>;
 				type = "passive";
 			};
 
 			quiet_batt_trip2: quiet-batt-trip2 {
-				temperature = <50000>;
-				hysteresis = <7000>;
+				temperature = <42000>;
+				hysteresis = <4000>;
 				type = "passive";
 			};
 
 			quiet_batt_trip3: quiet-batt-trip3 {
-				temperature = <55000>;
-				hysteresis = <7000>;
+				temperature = <45000>;
+				hysteresis = <5000>;
 				type = "passive";
 			};
 
 			quiet_batt_trip4: quiet-batt-trip4 {
-				temperature = <56000>;
+				temperature = <53000>;
 				hysteresis = <3000>;
 				type = "passive";
 			};
