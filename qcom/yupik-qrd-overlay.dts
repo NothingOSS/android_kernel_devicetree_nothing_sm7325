@@ -2,6 +2,7 @@
 /plugin/;
 
 #include "yupik-qrd.dtsi"
+#include "yupik-abra-common-overlay.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. Yupik QRD";

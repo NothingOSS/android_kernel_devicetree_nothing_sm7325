@@ -1,0 +1,8 @@
+/* Reserved for bootloader log memory according to xbl uefiplat.cfg*/
+&soc {
+	bootloader_log {
+		compatible = "nothing,bootloader_log";
+		memory-region = <&reserved_xbl_uefi>;
+		log,offset_size = <0x4000 0x100000>;
+	};
+};
