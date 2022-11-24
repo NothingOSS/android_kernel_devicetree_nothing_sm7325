@@ -642,6 +642,7 @@
 	};
 
 	quiet-therm-nt-step {
+		disable-thermal-zone;
 		polling-delay-passive = <2000>;
 		polling-delay = <0>;
 		thermal-governor = "step_wise";
@@ -697,11 +698,55 @@
 
 			batt-cdev3 {
 				trip = <&quiet_batt_trip3>;
-				cooling-device = <&battery_charger 5 5>;
+				cooling-device = <&battery_charger 6 6>;
 			};
 
 			batt-cdev4 {
 				trip = <&quiet_batt_trip4>;
+				cooling-device = <&battery_charger 7 7>;
+			};
+		};
+	};
+
+	quiet-nt-pps-step {
+		polling-delay-passive = <2000>;
+		polling-delay = <0>;
+		thermal-governor = "step_wise";
+		thermal-sensors = <&pmk8350_adc_tm PM7325_ADC7_AMUX_THM1_100K_PU>;
+
+		trips {
+			quiet_batt_pps_trip0: quiet-batt-pps-trip0 {
+				temperature = <36000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+
+			quiet_batt_pps_trip1: quiet-batt-pps-trip1 {
+				temperature = <40000>;
+				hysteresis = <5000>;
+				type = "passive";
+			};
+
+			quiet_batt_pps_trip2: quiet-batt-pps-trip2 {
+				temperature = <43000>;
+				hysteresis = <4000>;
+				type = "passive";
+			};
+		};
+
+		cooling-maps {
+			batt-pps-cdev0 {
+				trip = <&quiet_batt_pps_trip0>;
+				cooling-device = <&battery_charger 3 3>;
+			};
+
+			batt-pps-cdev1 {
+				trip = <&quiet_batt_pps_trip1>;
+				cooling-device = <&battery_charger 5 5>;
+			};
+
+			batt-pps-cdev2 {
+				trip = <&quiet_batt_pps_trip2>;
 				cooling-device = <&battery_charger 6 6>;
 			};
 		};
@@ -1054,7 +1099,7 @@
 };
 
 &battery_charger {
-	qcom,thermal-mitigation = <6500000 5000000 4000000 3000000
+	qcom,thermal-mitigation = <6500000 5000000 4000000 3000000 2500000
 				2000000 0>;
 };
 
