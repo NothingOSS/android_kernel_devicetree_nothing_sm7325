@@ -43,3 +43,8 @@
 9. OS 1.1.7
   - Improve charge and thermal configure
 
+
+10. OS 1.1.8
+  - Solve the problem of probabilistic temperature control failure
+
+
