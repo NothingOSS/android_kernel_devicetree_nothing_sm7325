@@ -6,3 +6,8 @@
      Please make sure the path of vendor_links is correct when you lunch and building image
       - vendor/qcom/proprietary/camera-devicetree/
       - vendor/qcom/proprietary/display-devicetree/display
+
+2. OS 1.5.3
+  - No Update
+
+
