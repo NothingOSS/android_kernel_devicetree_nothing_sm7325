@@ -10,4 +10,7 @@
 2. OS 1.5.3
   - No Update
 
+3. OS 1.5.4
+  - Update to LTS_5.4.210
+
 
