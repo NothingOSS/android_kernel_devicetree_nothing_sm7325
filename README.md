@@ -16,3 +16,6 @@
 4. OS 1.5.5
   - No Update
 
+5. OS 2.0.2
+  - Improve display driver
+
