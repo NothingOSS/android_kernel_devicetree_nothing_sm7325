@@ -19,3 +19,6 @@
 5. OS 2.0.2
   - Improve display driver
 
+6. OS 2.0.4
+  - No update
+
