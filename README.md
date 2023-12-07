@@ -22,3 +22,5 @@
 6. OS 2.0.4
   - No update
 
+7. OS 2.0.5
+  - No update
