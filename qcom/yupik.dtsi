@@ -35,7 +35,7 @@
 	#size-cells = <2>;
 
 	chosen {
-		bootargs = "log_buf_len=256K earlycon=msm_geni_serial,0x994000 rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kpti=off";
+		bootargs = "log_buf_len=1M rcupdate.rcu_expedited=1 rcu_nocbs=0-7 kpti=off ignore_loglevel printk.devkmsg=on";
 	};
 
 	memory { device_type = "memory"; reg = <0 0 0 0>; };
@@ -2376,6 +2376,12 @@
 			reg = <0x65c 0x4>;
 		};
 
+		restart_info@e0{
+			compatible ="nothing,msm-imem-restart_info";
+			reg = <0xe0 0x64>;
+			info_size = <0x64>;
+		};
+
 		dload_type@1c {
 			compatible = "qcom,msm-imem-dload-type";
 			reg = <0x1c 0x4>;
@@ -4101,6 +4107,8 @@
 				qcom,intents = <0x800  5
 						0x2000 3
 						0x4400 2>;
+				qcom,non-wake-svc = <0x51
+						0x190>;
 			};
 
 			qcom,adsp_glink_ssr {
