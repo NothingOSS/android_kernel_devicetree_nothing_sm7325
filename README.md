@@ -7,3 +7,6 @@
       - vendor/qcom/proprietary/camera-devicetree/
       - vendor/qcom/proprietary/display-devicetree/display
 
+2. NOS 2.5.1.BETA2
+  - No update
+
