@@ -1,0 +1,9 @@
+/dts-v1/;
+
+#include "katmaip-fp3.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. KATMAIP-FPi3 SoC";
+	compatible = "qcom,yupikp-iot";
+	qcom,board-id = <0 0>;
+};
