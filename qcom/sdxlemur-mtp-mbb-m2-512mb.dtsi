@@ -1,0 +1,88 @@
+#include "sdxlemur-v2.dtsi"
+#include "sdxlemur-mtp-mbb-pcie-ep.dtsi"
+#include "sdxlemur-512mb.dtsi"
+
+#include <dt-bindings/iio/qcom,spmi-vadc.h>
+
+&pmx65_gpios {
+	antenna0_detect {
+		antenna0_detect_default:antenna0_detect_default {
+			pins = "gpio5";
+			function = "normal";
+			bias-high-impedance;
+		};
+	};
+
+	hwid {
+		hwid_default:hwid_default {
+			pins = "gpio12";
+			function = "normal";
+			bias-high-impedance;
+		};
+	};
+};
+
+&pmk8350_vadc {
+	pinctrl-names = "default";
+	pinctrl-0 = <&hwid_default &antenna0_detect_default>;
+
+	/delete-node/ pmx65_qtm_skin_therm;
+
+	pmx65_hwid {
+		reg = <PMX65_ADC7_GPIO12_100K_PU>;
+		label = "pmx65_hwid";
+		qcom,hw-settle-time = <200>;
+		qcom,pre-scaling = <1 1>;
+		qcom,scale-fn-type = <ADC_SCALE_HW_CALIB_DEFAULT>;
+	};
+
+	pmx65_antenna0_detect {
+		reg = <PMX65_ADC7_GPIO05_100K_PU>;
+		label = "pmx65_antenna0_detect";
+		qcom,hw-settle-time = <200>;
+		qcom,pre-scaling = <1 1>;
+		qcom,scale-fn-type = <ADC_SCALE_HW_CALIB_DEFAULT>;
+	};
+
+	pmx65_antenna2_detect {
+		reg = <PMX65_ADC7_AMUX_THM6_100K_PU>;
+		label = "pmx65_antenna2_detect";
+		qcom,hw-settle-time = <200>;
+		qcom,pre-scaling = <1 1>;
+		qcom,scale-fn-type = <ADC_SCALE_HW_CALIB_DEFAULT>;
+	};
+};
+
+&pmk8350_adc_tm {
+	io-channels = <&pmk8350_vadc PMX65_ADC7_AMUX_THM1_100K_PU>,
+		      <&pmk8350_vadc PMX65_ADC7_AMUX_THM2_100K_PU>,
+		      <&pmk8350_vadc PMX65_ADC7_AMUX_THM3_100K_PU>,
+		      <&pmk8350_vadc PMX65_ADC7_AMUX_THM4_100K_PU>,
+		      <&pmk8350_vadc PMX65_ADC7_GPIO12_100K_PU>,
+		      <&pmk8350_vadc PMX65_ADC7_GPIO05_100K_PU>,
+		      <&pmk8350_vadc PMX65_ADC7_AMUX_THM6_100K_PU>;
+
+	/delete-node/ pmx65_qtm_skin_therm;
+
+	pmx65_hwid {
+		reg = <PMX65_ADC7_GPIO12_100K_PU>;
+		qcom,ratiometric;
+		qcom,hw-settle-time = <200>;
+	};
+
+	pmx65_antenna0_detect {
+		reg = <PMX65_ADC7_GPIO05_100K_PU>;
+		qcom,ratiometric;
+		qcom,hw-settle-time = <200>;
+	};
+
+	pmx65_antenna2_detect {
+		reg = <PMX65_ADC7_AMUX_THM6_100K_PU>;
+		qcom,ratiometric;
+		qcom,hw-settle-time = <200>;
+	};
+};
+
+&thermal_zones {
+	/delete-node/ modem-beamer-usr;
+};

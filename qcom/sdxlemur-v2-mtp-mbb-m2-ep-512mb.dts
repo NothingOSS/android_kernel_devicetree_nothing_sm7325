@@ -1,0 +1,11 @@
+/dts-v1/;
+
+#include "sdxlemur-mtp-mbb-m2-512mb.dtsi"
+#include "sdxlemur-mtp-mbb-m2-ep.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SDXLEMUR MTP MBB M2 EP V2 512MB";
+	compatible = "qcom,sdxlemur-mtp",
+		"qcom,sdxlemur", "qcom,mtp";
+	qcom,board-id = <0x13010008 0x213>;
+};
