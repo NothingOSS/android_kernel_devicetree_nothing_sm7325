@@ -15,3 +15,6 @@
 
 4. NOS 2.5.6
   - No update
+
+5. NOS 2.6(Spacewar-U2.6-240705_1617)
+  - No update
