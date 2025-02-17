@@ -172,6 +172,28 @@
 				qcom,wf-brake-pattern = /bits/ 8 <0x0 0x0 0x0>;
 				qcom,wf-auto-res-disable;
 			};
+
+			effect_7 {
+					/* FIFO sample only */
+				qcom,effect-id = <7>;
+				qcom,wf-vmax-mv = <10000>;
+				qcom,wf-fifo-data = [
+							00 00 01 02 04 08 0e 18
+							2a 47 60 6d 75 79 7c 7d
+							7e 7d 7d 7b 77 71 66 53
+							33 fb c7 a9 98 8e 88 85
+							83 82 81 81 81 82 83 84
+							87 8d 96 a6 c1 f2 22 36
+							35 1b e8 bb a3 94 8c 87
+							84 82 82 81 81 81 81 81
+							81 82 83 85 88 8e 97 a8
+							c5 f8 2e 4c 5e 67 6a 69
+							62 53 39 21 13 0b 06 03
+							02 01 00  ];
+				qcom,wf-fifo-period = <S_PERIOD_F_8KHZ>;
+				qcom,wf-brake-disable;
+				qcom,wf-auto-res-disable;
+			};
 		};
 
 		pm8350b_amoled: qcom,amoled {

@@ -225,6 +225,7 @@ dtbo-$(CONFIG_ARCH_YUPIK) +=    \
 	yupik-idp-overlay.dtbo \
 	yupik-atp-overlay.dtbo \
 	yupik-qrd-overlay.dtbo \
+	yupik-qrd-pm7250b-overlay.dtbo \
 	yupik-idps-amoled-overlay.dtbo \
 	yupik-idp-pm7250b-overlay.dtbo \
 	yupik-idp-hsp-overlay.dtbo \
@@ -267,6 +268,7 @@ yupik-rumi-overlay.dtbo-base := yupik.dtb
 yupik-idp-overlay.dtbo-base := yupik.dtb
 yupik-atp-overlay.dtbo-base := yupik.dtb
 yupik-qrd-overlay.dtbo-base := yupik.dtb
+yupik-qrd-pm7250b-overlay.dtbo-base := yupik.dtb
 yupik-idps-amoled-overlay.dtbo-base := yupik.dtb
 yupik-idp-pm7250b-overlay.dtbo-base := yupik.dtb
 yupik-idp-hsp-overlay.dtbo-base := yupik-hsp.dtb
@@ -516,6 +518,7 @@ dtb-$(CONFIG_ARCH_SDXLEMUR) += sdxlemur-rumi.dtb \
 	sdxlemur-v2-mtp-cpe-pine2x.dtb \
 	sdxlemur-v2-mtp-mbb-emmc-512mb.dtb \
 	sdxlemur-v2-mtp-mbb-m2-ep-usb.dtb \
+	sdxlemur-v2-mtp-mbb-m2-ep.dtb \
 	sdxlemur-v2-mtp-mbb-m2-ep-usb-512mb.dtb \
 	sdxlemur-v2-mtp-mbb-m2-ep.dtb \
 	sdxlemur-v2-mtp-mbb-m2-ep-512mb.dtb \

@@ -4,7 +4,7 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 
 &bolero {
-	qcom,num-macros = <4>;
+	qcom,num-macros = <3>;
 	qcom,bolero-version = <4>;
 	#address-cells = <1>;
 	#size-cells = <1>;
@@ -139,6 +139,7 @@
 
 	wsa_macro: wsa-macro@3240000 {
 		compatible = "qcom,wsa-macro";
+		status = "disabled";
 		reg = <0x3240000 0x0>;
 		clock-names = "wsa_core_clk", "wsa_npl_clk";
 		clocks = <&clock_audio_wsa_1 0>,
@@ -290,10 +291,10 @@
 		qcom,cdc-vdd-mic-bias-voltage = <3296000 3296000>;
 		qcom,cdc-vdd-mic-bias-current = <30000>;
 
-		qcom,cdc-micbias1-mv = <1800>;
-		qcom,cdc-micbias2-mv = <1800>;
-		qcom,cdc-micbias3-mv = <1800>;
-		qcom,cdc-micbias4-mv = <1800>;
+		qcom,cdc-micbias1-mv = <2750>;
+		qcom,cdc-micbias2-mv = <2700>;
+		qcom,cdc-micbias3-mv = <2750>;
+		qcom,cdc-micbias4-mv = <2750>;
 
 		qcom,cdc-static-supplies = "cdc-vdd-rxtx",
 					   "cdc-vddpx",
@@ -317,6 +318,8 @@
 		"Analog Mic3", "MIC BIAS1",
 		"AMIC4", "Analog Mic4",
 		"Analog Mic4", "MIC BIAS3",
+		"AMIC5", "Analog Mic5",
+		"Analog Mic5", "MIC BIAS4",
 		"TX DMIC0", "Digital Mic0",
 		"TX DMIC0", "MIC BIAS3",
 		"TX DMIC1", "Digital Mic1",
@@ -332,15 +335,10 @@
 		"IN1_HPHL", "HPHL_OUT",
 		"IN2_HPHR", "HPHR_OUT",
 		"IN3_AUX", "AUX_OUT",
-		"WSA SRC0_INP", "SRC0",
-		"WSA_TX DEC0_INP", "TX DEC0 MUX",
-		"WSA_TX DEC1_INP", "TX DEC1 MUX",
 		"RX_TX DEC0_INP", "TX DEC0 MUX",
 		"RX_TX DEC1_INP", "TX DEC1 MUX",
 		"RX_TX DEC2_INP", "TX DEC2 MUX",
 		"RX_TX DEC3_INP", "TX DEC3 MUX",
-		"SpkrLeft IN", "WSA_SPK1 OUT",
-		"SpkrRight IN", "WSA_SPK2 OUT",
 		"TX SWR_INPUT", "WCD_TX_OUTPUT",
 		"VA SWR_INPUT", "VA_SWR_CLK",
 		"VA SWR_INPUT", "WCD_TX_OUTPUT",
@@ -365,7 +363,8 @@
 	qcom,cdc-dmic01-gpios = <&cdc_dmic01_gpios>;
 	qcom,cdc-dmic23-gpios = <&cdc_dmic23_gpios>;
 	qcom,cdc-dmic45-gpios = <&cdc_dmic45_gpios>;
-	qcom,sec-mi2s-gpios = <&cdc_sec_mi2s_gpios>;
+	//qcom,sec-mi2s-gpios = <&cdc_sec_mi2s_gpios>;
+	qcom,pri-mi2s-gpios = <&cdc_pri_mi2s_gpios>;
 	asoc-codec  = <&stub_codec>, <&bolero>,
 		      <&wcd937x_codec>,
 		      <&wsa883x_0221>, <&wsa883x_0222>,
@@ -374,7 +373,7 @@
 			   "wcd937x_codec",
 			   "wsa-codec1", "wsa-codec2",
 			   "msm-ext-disp-audio-codec-rx";
-	qcom,wsa-max-devs = <2>;
+	qcom,wsa-max-devs = <0>;
 	qcom,cps_reg_phy_addr = <0x3250300 0x3250304 0x3250318>;
 	qcom,cps_wsa_vbatt_temp_reg_addr = <0x0003429 0x0003422>;
 	qcom,cps_threshold_levels = <148 168>;
@@ -477,15 +476,32 @@
 };
 
 &q6core {
+	cdc_pri_mi2s_gpios: msm_cdc_pinctrl_pri {
+		compatible = "qcom,msm-cdc-pinctrl";
+		pinctrl-names = "aud_active", "aud_sleep";
+		pinctrl-0 = <&pri_mi2s_sck_active &pri_mi2s_ws_active
+				&pri_mi2s_sd0_active &pri_mi2s_sd1_active>;
+		pinctrl-1 = <&pri_mi2s_sck_sleep &pri_mi2s_ws_sleep
+				&pri_mi2s_sd0_sleep &pri_mi2s_sd1_sleep>;
+		#gpio-cells = <0>;
+	};
 	cdc_sec_mi2s_gpios: msm_cdc_pinctrl_sec {
 		compatible = "qcom,msm-cdc-pinctrl";
 		pinctrl-names = "aud_active", "aud_sleep";
-		pinctrl-0 = <&sec_mi2s_sck_active &sec_mi2s_ws_active
+		pinctrl-0 = <&sec_mi2s_sck_active
 				&sec_mi2s_sd0_active>;
-		pinctrl-1 = <&sec_mi2s_sck_sleep &sec_mi2s_ws_sleep
+		pinctrl-1 = <&sec_mi2s_sck_sleep
 				&sec_mi2s_sd0_sleep>;
 		#gpio-cells = <0>;
 	};
+};
+
+&dai_mi2s0_rx {
+	qcom,msm-mi2s-lines = <2>;
+};
+
+&dai_mi2s0_tx {
+	qcom,msm-mi2s-lines = <1>;
 };
 
 &dai_mi2s1_rx {
