@@ -9,3 +9,6 @@
 
 2. NOS 3.0(Spacewar-V3.0-250218-1552)
   - Optimize Bluetooth stability
+
+3. NOS 3.0(Spacewar-V3.0-250303-1817)
+  - No update
