@@ -21,3 +21,6 @@
 
 6. NOS 3.2(Spacewar-V3.2-250701-1737)
   - No update
+
+7. NOS 3.2(Spacewar-V3.2-250804-2110)
+  - No update
