@@ -11,11 +11,3 @@
 	qcom,board-id = <34 1>;
 	qcom,softsku-id = <8>;
 };
-
-&pcie1 {
-	status = "ok";
-};
-
-&pcie1_msi {
-	status = "ok";
-};

@@ -82,3 +82,11 @@
 			};
 	};
 };
+
+&pcie1 {
+	status = "ok";
+};
+
+&pcie1_msi {
+	status = "ok";
+};

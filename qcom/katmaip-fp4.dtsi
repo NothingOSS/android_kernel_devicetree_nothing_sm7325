@@ -1,0 +1,8 @@
+#include "katmai-fp4.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. KATMAIP-FP4 SoC";
+	compatible = "qcom,yupikp-iot";
+	qcom,msm-id = <575 0x10000>;
+	qcom,softsku-id = <4>;
+};

@@ -58,3 +58,11 @@
 		<0xc00c6000 0x01000>;
 	reg-names = "dsi_ctrl", "disp_cc_base", "mdp_intf_base", "disp_conf";
 };
+
+&pcie1 {
+	status = "ok";
+};
+
+&pcie1_msi {
+	status = "ok";
+};

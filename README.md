@@ -27,3 +27,6 @@
 
 8. NOS 3.2(Spacewar-V3.2-250926-1631)
   - No update
+
+9. NOS 3.2(Spacewar-V3.2-251219-1652)
+  - Update devicetree

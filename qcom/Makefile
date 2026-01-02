@@ -247,6 +247,8 @@ dtbo-$(CONFIG_ARCH_YUPIK) +=    \
 	katmai-fp2p5-hsp-pm7250b-overlay.dtbo \
 	katmai-fp3-hsp-overlay.dtbo \
 	katmai-fp3-hsp-pm7250b-overlay.dtbo \
+	katmai-fp4-hsp-overlay.dtbo \
+	katmai-fp4-hsp-pm7250b-overlay.dtbo \
 	yupik-iot-idps-amoled-overlay.dtbo \
 	yupikp-iot-idp-overlay.dtbo \
 	yupikp-iot-idp-pm7250b-overlay.dtbo \
@@ -261,6 +263,8 @@ dtbo-$(CONFIG_ARCH_YUPIK) +=    \
 	katmaip-fp2p5-hsp-pm7250b-overlay.dtbo \
 	katmaip-fp3-hsp-overlay.dtbo \
 	katmaip-fp3-hsp-pm7250b-overlay.dtbo \
+	katmaip-fp4-hsp-overlay.dtbo \
+	katmaip-fp4-hsp-pm7250b-overlay.dtbo \
 	yupikp-iot-idps-amoled-overlay.dtbo
 
 
@@ -290,6 +294,8 @@ katmai-fp2p5-hsp-overlay.dtbo-base :=  katmai-fp2p5.dtb
 katmai-fp2p5-hsp-pm7250b-overlay.dtbo-base :=  katmai-fp2p5.dtb
 katmai-fp3-hsp-overlay.dtbo-base :=  katmai-fp3.dtb
 katmai-fp3-hsp-pm7250b-overlay.dtbo-base :=  katmai-fp3.dtb
+katmai-fp4-hsp-overlay.dtbo-base := katmai-fp4.dtb
+katmai-fp4-hsp-pm7250b-overlay.dtbo-base := katmai-fp4.dtb
 yupik-iot-idps-amoled-overlay.dtbo-base := yupik-iot.dtb katmai.dtb katmai-fp2.dtb
 yupikp-iot-idp-overlay.dtbo-base := yupikp-iot.dtb katmaip.dtb katmaip-fp2.dtb
 yupikp-iot-idp-pm7250b-overlay.dtbo-base := yupikp-iot.dtb katmaip.dtb katmaip-fp2.dtb
@@ -304,6 +310,8 @@ katmaip-fp2p5-hsp-overlay.dtbo-base := katmaip-fp2p5.dtb
 katmaip-fp2p5-hsp-pm7250b-overlay.dtbo-base := katmaip-fp2p5.dtb
 katmaip-fp3-hsp-overlay.dtbo-base := katmaip-fp3.dtb
 katmaip-fp3-hsp-pm7250b-overlay.dtbo-base := katmaip-fp3.dtb
+katmaip-fp4-hsp-overlay.dtbo-base := katmaip-fp4.dtb
+katmaip-fp4-hsp-pm7250b-overlay.dtbo-base := katmaip-fp4.dtb
 yupikp-iot-idps-amoled-overlay.dtbo-base := yupikp-iot.dtb katmaip.dtb katmaip-fp2.dtb
 else
 dtb-$(CONFIG_ARCH_YUPIK) += yupik-rumi.dtb \
